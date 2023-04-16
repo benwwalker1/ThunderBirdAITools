@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "AI Tools",
+  "version": "1.0",
+  "description": "A simple Thunderbird extension to read email subject and body.",
+  "applications": {
+    "gecko": {
+      "id": "read-email-content@example.com",
+      "strict_min_version": "78.0"
+    }
+  },
+  "background": {
+    "scripts": ["background.js", "openai.js", "popup.js", ".env.js"]
+  },
+  "compose_action": {
+    "default_icon": {
+      "16": "icon.png"
+    },
+    "default_title": "AI Tools",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["accountsRead", "messagesRead", "compose", "menus", "tabs", "activeTab"],
+  "content_security_policy": "script-src 'self' https://api.openai.com; object-src 'self'"
+}
